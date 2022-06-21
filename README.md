@@ -1,12 +1,16 @@
 # Scorched!
-An Analysis of U.S. Wildfires from 1992-2015
+A Final Project Analysis of U.S. Wildfires from 1992-2015
 
 ### By: k.E.G.d. (Katlin, Enzo, Graham, Danieli)
 
 ![image](https://user-images.githubusercontent.com/92705556/164362996-733acdf8-498c-4ec8-83fc-886dc000c433.png)
 
+## Summary of Project
+“Scorched!” is Team k.E.G.d.’s (Katlin, Enzo, Graham, and Danieli) final analysis project on U.S. Wildfires from 1992-2015.  Using Python / Pandas, PostgreSQL / PgAdmin, Tableau, and Javascript our team assessed and visually displayed trends in the data over time, including filters for year, state, month, fire size, and fire cause.  Applying our skills in Supervised Machine Learning with the Easy Ensemble Classifier model, we also created a tool that can predict whether a fire would grow to more than 50 acres based on user inputs of state, month, temperature, wind, and humidity.  Overall, fire size has increased since the early ‘90s, and, with climate forecasts projecting a hotter and drier future, the occurrence of massive wildfires is likely to continue.  
+
 ## Project Visualizations
-- **Web App**: *See "Dashboard" section below*
+- **Web App**: *https://salty-depths-05618.herokuapp.com/*
+    - Web App GitHub (includes web application files only): *https://github.com/goatgirl86/wildfire_deploy1.git*
 - **Tableau**: *https://public.tableau.com/shared/M9HQJBKBQ?:display_count=n&:origin=viz_share_link*
 - **Google Slides Presentation**: *https://docs.google.com/presentation/d/e/2PACX-1vRcpefueeL0hf7W42UyXHPVGJ4oJcOoGwTu4AZiRIH_-beuVVj-dWq7IrlwUGHWFlr_si-9TXeTJbFG/embed?start=false&loop=false&delayms=3000*
 
@@ -38,14 +42,14 @@ An Analysis of U.S. Wildfires from 1992-2015
 
 ### Communication Plan
 - **Communication Platforms utilized for group discussions**: GitHub, Google Drive, Instagram, Slack, Zoom
-    
+
 Beginning on March 26, 2022, the group held weekly meetings via Zoom in addition to more frequent communication via the platforms listed above. Each group member actively participated in meetings, contributed to group discussions, sought to help other group members who were stuck or struggling, and played to their personal coding strengths to make the final product the best it could be.
 
 ## Data Exploration
 The "U.S. Wildfire data (plus other attributes)" dataset was downloaded from *kaggle* and explored using both Google Colab and Pandas. 
 - *Entire Dataset: 55,367 rows from 43 columns* 
   
-### Data Preprocessing
+### Data Preprocessing 
 Based on the original dataset, it was determined that the data needed to be cleaned of columns and rows dominated by large numbers of empty cells, null values, and zeros. 'Putout_time'required reclassification of the data type from string to date, and 'fire_cause' was binned to reduce number of unique values. 
 - *Cleaned Data: 13,138 rows from 18 columns* 
 
@@ -109,7 +113,7 @@ Using our knowledge of Supervised and Unsupervised Machine Learning, we ran seve
 ![image](https://user-images.githubusercontent.com/92705556/170169236-00e58144-994f-4a40-b6b3-a2fe06629178.png)
 
 
-**NOTE: In the end, we decided to go with Easy Ensemble Classifer using Label Encoder for our prediction tool. This model had a accuracy score and was easier to merge with our web app than some of the other models.**
+**NOTE: In the end, we decided to go with Easy Ensemble Classifer using Label Encoder for our prediction tool. This model had a high accuracy score and was easier to merge with our web app than some of the other models.**
 
 ## Database
 To create our Database, we chose to use PgAdmin and SQL Alchemy.  Within our database, we have four main tables that are all connected through a common field: 'fire_id'. The original four tables were: fire_category, fire_info, fire_location, and weather_data. Using SQLAlchemy and Python, we then queried and joined information from the four original tables to create new tables.
@@ -127,18 +131,20 @@ To create our Database, we chose to use PgAdmin and SQL Alchemy.  Within our dat
 
 ## Dashboard
 To make the dashboard, we used our knowledge of HTML and Javascript to create a stylish web app that includes background information, wildfire photos, interactive visualizations of our Tableau and Google Slides, and a "Predict Your Fire" page.  The prediction page allows page visitors to run user inputs through our Machine Learning model to predict whether a fire 50 acres or larger will result in the next 7 days.  
+ - https://salty-depths-05618.herokuapp.com/
 
 ***Sreenshot 13**: Page 1 of our web app*
 
 ![image](https://user-images.githubusercontent.com/92705556/170163543-025acf1b-bbff-4d31-a6f3-be7feaeebb9e.png)
 ![image](https://user-images.githubusercontent.com/92705556/170163404-1327c862-ec69-4632-9a42-9b057b3c97f2.png)
-![image](https://user-images.githubusercontent.com/92705556/170163686-e9c2b28b-9a52-4c54-8e37-e4f2734f8d90.png)
+![image](https://user-images.githubusercontent.com/92705556/171564204-cf7ace24-5c47-40fe-ad6e-88edc7790690.png)
 
 
 ***Sreenshot 14 (group)**: Page 2 of our web app*
 
-![image](https://user-images.githubusercontent.com/92705556/170163240-2ebb4f92-6074-4628-b043-d74d6a5a9057.png)
-![image](https://user-images.githubusercontent.com/92705556/169740396-8aad755b-1ef1-411e-bce9-fb6400cbb0b5.png)
+![image](https://user-images.githubusercontent.com/92705556/171562151-255e45f0-a0df-4c1b-8d89-53cdbeb4f070.png)
+![image](https://user-images.githubusercontent.com/92705556/171564095-8fe8e4ef-ff6f-487a-a82a-0bed04fb2fbc.png)
+
 
 
 ## Conclusions
@@ -151,7 +157,7 @@ Just as predicting the weather is notoriously challenging even for the professio
 
 **Real Life Applications**
 
-With our fire prediction and visualization tool, first responders may address
+With a fire prediction and visualization tool like ours, first responders may address
 - Asset relocation
 - Early containment
 - Possible evacuation areas
@@ -163,7 +169,7 @@ With our fire prediction and visualization tool, first responders may address
 **Climate change affects us all and needs to be a topic of discussion at all levels of government and public forum.** Tools like this one that are easy to understand and bring pertinent issues to the forefront are needed to bring us all in the fight for a more stable future.
 
 ## Credits
-***This project was created in 2022 as part of a Final Project for the University of Denver's Data Analytics BootCamp (a Trilogy Education Services program).*** 
+***This project was created in 2022 as part of a Final Project for the University of Denver's Data Analytics BootCamp (a Trilogy Education Services program). It is NOT intended to provide real life predictions.*** 
 - Team k.E.G.d. wishes to thank our instructor, Svitlana, and our T.A.s, James, Sheri, and Simon, for all their assistance on this project.  
 - Credit is also due to Team Lizard People, and their Conspiracy Theory project, for inspiration when our coding struggles got real.
 - Lastly, without DU’s Data Analytics Bootcamp, this team, our friendship, and our project wouldn’t even exist!!!
